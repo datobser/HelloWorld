@@ -9,17 +9,22 @@
 		constructor() {
 			super(); 
 			this._shadowRoot = this.attachShadow({mode: "open"});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = false;
-            this._tagContainer;
-            this._tagType = "h1";
-            this._tagText = "Hello World";
+	            	this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+	            	this._firstConnection = false;
+	            	this._tagContainer;
+	            	this._tagType = "h1";
+	            	this._tagText = "Hello World";
 
-            //Adding event handler for click events
+            		//Adding event handler for click events
 			this.addEventListener("click", event => {
 				var event = new Event("onClick");
 				this.dispatchEvent(event);
-            });
+            		});
+
+			// eigene Erweiterung zum Mouse Event Handling
+			if (OnClick) {
+                		<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+            		}
 		}
 
         //Fired when the widget is added to the html DOM of the page
@@ -91,21 +96,6 @@
             this._shadowRoot.appendChild(this._tagContainer);
 
         }
-
-	// eigene Erweiterung zum Mouse Event Handling
-
-	if("OnClick"){
-		var oldH = this.getH();
-			if (oldH === "h1"){
-				this.setH2();
-			} 
-			else if (oldH === "h2"){
-				this.setH3();
-			} 
-			else {
-				this.setH1();
-			}
-	}
     
     
     });
