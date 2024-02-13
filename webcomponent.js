@@ -84,6 +84,19 @@
                 this._tagContainer.parentNode.removeChild(this._tagContainer);
             }
 
+	    if("OnClick"){
+		var oldH = this.getH();
+			if (oldH === "h1"){
+				this.setH2();
+			} 
+			else if (oldH === "h2"){
+				this.setH3();
+			} 
+			else {
+				this.setH1();
+			}
+	    }
+		
             var shadow = window.getSelection(this._shadowRoot);
             this._tagContainer = document.createElement(this._tagType);
             var theText = document.createTextNode(this._tagText);    
