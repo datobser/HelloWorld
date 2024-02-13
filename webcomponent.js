@@ -1,6 +1,7 @@
 (function()  {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
+    	<h1>Click on this text!</h1>
     `;
 
     customElements.define('com-sap-sample-helloworld5', class HelloWorld extends HTMLElement {
@@ -22,8 +23,8 @@
             		});
 
 			// eigene Erweiterung zum Mouse Event Handling
-			if (OnClick) {
-                		<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+			if ("OnClick") {
+                		onclick="this.innerHTML = 'Ooops!'
             		}
 		}
 
