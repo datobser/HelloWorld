@@ -69,16 +69,7 @@
 	},
 	"events": {
 		"onClick": {
-			var oldH = this.getH();
-				if (oldH === "h1"){
-					this.setH2();
-				} 
-				else if (oldH === "h2"){
-				this.setH3();
-				} 
-				else {
-					this.setH1();
-				}
+			"description": "Called when the user clicks the Gauge"
 		}
 	}
 }
