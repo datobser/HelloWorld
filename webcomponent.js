@@ -83,8 +83,18 @@
             if (this._tagContainer){
                 this._tagContainer.parentNode.removeChild(this._tagContainer);
             }
+		
+            var shadow = window.getSelection(this._shadowRoot);
+            this._tagContainer = document.createElement(this._tagType);
+            var theText = document.createTextNode(this._tagText);    
+            this._tagContainer.appendChild(theText); 
+            this._shadowRoot.appendChild(this._tagContainer);
 
-	    if("OnClick"){
+        }
+
+	// eigene Erweiterung zum Mouse Event Handling
+
+	if("OnClick"){
 		var oldH = this.getH();
 			if (oldH === "h1"){
 				this.setH2();
@@ -95,15 +105,7 @@
 			else {
 				this.setH1();
 			}
-	    }
-		
-            var shadow = window.getSelection(this._shadowRoot);
-            this._tagContainer = document.createElement(this._tagType);
-            var theText = document.createTextNode(this._tagText);    
-            this._tagContainer.appendChild(theText); 
-            this._shadowRoot.appendChild(this._tagContainer);
-
-        }
+	}
     
     
     });
